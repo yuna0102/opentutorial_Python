@@ -1,7 +1,14 @@
 #!C:\Users\choiy\AppData\Local\Programs\Python\Python38-32\python.exe
 print("Content-Type: text/html")
 print()
-import cgi
+import cgi, os
+
+files = os.listdir(path='data') #'data'라는 폴더 안에 있는 파일들을 리스트로 만들어서 files라는 변수에 저장함
+print(files) #즉, files는 리스트임.
+listStr = ''
+for item in files: #files 안에 있는 element들을 한 개씩 item이라는 변수에 꺼낸다.
+  listStr = listStr + '<li><a href="index.py?id={name}">{name}</a></li>'.format(name=item)
+print(listStr)
 form = cgi.FieldStorage()
 if 'id' in form:
     pageId = form["id"].value
@@ -17,14 +24,9 @@ print('''<!doctype html>
 </head>
 <body>
   <h1><a href="index.py">WEB</a></h1>
-  <ol>
-    <li><a href="index.py?id=HTML">HTML</a></li>
-    <li><a href="index.py?id=CSS">CSS</a></li>
-    <li><a href="index.py?id=JavaScript">JavaScript</a></li>
-    <li><a href="index.py?id=Python">Python</a></li>
-  </ol>
+  {listStr}
   <h2>{title}</h2>
   <p>{desc}</p>
 </body>
 </html>
-'''.format(title=pageId, desc=description))
+'''.format(title=pageId, desc=description, listStr=listStr))
