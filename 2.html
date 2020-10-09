@@ -1,0 +1,29 @@
+{% load static %}
+<!-- #문서가 html이라고 선언 -->
+<!doctype html> 
+<html>
+    <head>
+        <!-- 웹페이지의 제목 -->
+        <title>WEB1 - html</title> 
+        <!-- #utf-8이라는 방식으로 저장되어 있다     -->
+        <meta charset="utf-8"> 
+    </head>
+    
+    <body>
+        <h1><a href="{% url 'index' %}">WEB</a></h1>
+        <ol>
+            <li><a href="{% url 'html' %}">HTML</a></li>
+            <li><a href="{% url 'css' %}">CSS</a></li>
+            <li><a href="{% url 'javascript' %}">JavaScript</a></li>
+        </ol>
+        <ul>
+            <li>yuna</li>
+            <li>CAU business administration</li>
+            <li>@bliiingxa_0102</li>
+        </ul>
+        
+        <h2>CSS</h2>
+        
+    </body>
+</html>
+
