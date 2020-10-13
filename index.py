@@ -13,7 +13,7 @@ print(listStr)
 form = cgi.FieldStorage()
 if 'id' in form:
     pageId = form["id"].value
-    description = open('data/'+pageId, 'r').read()
+    description = open('data/'+pageId, 'r').read() 
 else:
     pageId = 'Welcome'
     description = 'Hello, web'
@@ -26,6 +26,7 @@ print('''<!doctype html>
 <body>
   <h1><a href="index.py">WEB</a></h1>
   {listStr}
+  <a href="create.py">create</a>
   <h2>{title}</h2>
   <p>{desc}</p>
 </body>
