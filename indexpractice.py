@@ -9,6 +9,7 @@ if 'id' in form: #form안에 id값이 있냐?를 물어보는 것
 else:
     pageId = 'Welcome'
     description = 'Hello, web' #id값이 없을 때 description이라는 변수명이 hello world가 됨
+
 import sys
 import io
 sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')
